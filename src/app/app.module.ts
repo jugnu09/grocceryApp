@@ -10,6 +10,7 @@ import {
   MatCheckboxModule
 } from '@angular/material';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
 import { ToastrModule } from 'ngx-toastr';
 
 
@@ -33,7 +34,8 @@ import { AddGrocceryComponent } from './add-groccery/add-groccery.component';
     FormsModule,
     ReactiveFormsModule,
     MatTabsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
