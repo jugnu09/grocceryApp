@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'groccery';
+
+  navLinks =[
+    {
+      label: 'Add Groccery',
+      path: './addgroccery',
+      index: 0
+    }, {
+      label: 'Monthly Report',
+      path: './report',
+      index: 1
+    }
+  ];
 }
