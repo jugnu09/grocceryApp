@@ -3,25 +3,28 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DemoMaterialModule } from './material-module';
 import {
   MatCardModule,
   MatInputModule,
   MatButtonModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatSortModule
 } from '@angular/material';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { ToastrModule } from 'ngx-toastr';
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddGrocceryComponent } from './add-groccery/add-groccery.component';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddGrocceryComponent
+    AddGrocceryComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +36,10 @@ import { AddGrocceryComponent } from './add-groccery/add-groccery.component';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTabsModule,
     ToastrModule.forRoot(),
-    MatIconModule
+    MatIconModule,
+    MatSortModule,
+    DemoMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

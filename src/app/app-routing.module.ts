@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddGrocceryComponent } from './add-groccery/add-groccery.component';
+import {ReportComponent} from "./report/report.component";
 
 const routes: Routes = [
   {
@@ -9,7 +10,8 @@ const routes: Routes = [
   },
   {
     path: 'report',
-    loadChildren: './report/report.module#ReportModule'
+    //loadChildren: './report/report.module#ReportModule'
+    component: ReportComponent
   },
   {
     path: '',
