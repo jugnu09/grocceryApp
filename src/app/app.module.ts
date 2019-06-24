@@ -4,6 +4,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DemoMaterialModule } from './material-module';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database'
+//import { AngularFireDatabase} from '@angular/fire/database'
+
 import {
   MatCardModule,
   MatInputModule,
@@ -28,6 +34,7 @@ import { ReportComponent } from './report/report.component';
   ],
   imports: [
     BrowserModule,
+    //AngularFireDatabase,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -39,7 +46,10 @@ import { ReportComponent } from './report/report.component';
     ToastrModule.forRoot(),
     MatIconModule,
     MatSortModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+     AngularFirestoreModule,
+     AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-add-groccery',
@@ -9,7 +10,9 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddGrocceryComponent implements OnInit {
   grocceryForm : FormGroup;
-  constructor(private toastrService: ToastrService) { }
+  constructor(private toastrService: ToastrService,
+              private firebaseService : FirebaseService
+            ) { }
 
   ngOnInit() {
     this.grocceryForm = new FormGroup({
@@ -20,7 +23,7 @@ export class AddGrocceryComponent implements OnInit {
 
   onSubmit() {
     let item = this.grocceryForm.value;
-    console.log(item);
+    this.firebaseService.createEntry(item);
     this.toastrService.success("Item Added Successfully","Success!");
   }
 
