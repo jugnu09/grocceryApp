@@ -32,6 +32,13 @@ MIT
 @angular/core
 MIT
 
+@angular/fire
+MIT
+
+@angular/fire/database
+
+@angular/fire/firestore
+
 @angular/forms
 MIT
 
@@ -93,6 +100,30 @@ MIT
 
 @angular/router
 MIT
+
+@firebase/app
+Apache-2.0
+
+@firebase/database
+Apache-2.0
+
+@firebase/firestore
+Apache-2.0
+
+@firebase/logger
+Apache-2.0
+
+@firebase/util
+Apache-2.0
+
+@firebase/webchannel-wrapper
+Apache-2.0
+
+firebase/app
+
+firebase/database
+
+firebase/firestore
 
 ngx-toastr
 MIT
