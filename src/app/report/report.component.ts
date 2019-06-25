@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-report',
@@ -17,17 +18,21 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class ReportComponent implements OnInit {
   displayedColumns: string[] = ['item', 'amount'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  //dataSource = ELEMENT_DATA;
+  //dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource = new MatTableDataSource([]);
   expandedElement: PeriodicElement;
+  data : any;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor() { }
+  constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
+    this.data = this.firebaseService.getGrocceryItems();
+    this.data.subscribe(grocceryDetailsArray => {
+      this.dataSource = new MatTableDataSource(grocceryDetailsArray);
+      this.dataSource.paginator = this.paginator;
+    });
   }
-
 }
 
 export interface PeriodicElement {
@@ -36,67 +41,4 @@ export interface PeriodicElement {
   date: string;
   addedBy: string;
 }
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {
-    item: 'Onion',
-    amount: 50,
-    date: '12/10/2019',
-    addedBy: 'Neha'
-  },
-  {
-    item: 'Besan',
-    amount: 45,
-    date: '11/12/2019',
-    addedBy: 'Ritesh'
-  },
-  {
-    item: 'AllOut Refill',
-    amount: 76,
-    date: '18/12/2019',
-    addedBy: 'Ritesh'
-  },
-  {
-    item: 'Milk',
-    amount: 44,
-    date: '12/12/2019',
-    addedBy: 'Neha'
-  },
-  {
-    item: 'Water',
-    amount: 60,
-    date: '1/12/2019',
-    addedBy: 'Neha'
-  },
-  {
-    item: 'Vegitables',
-    amount: 426,
-    date: '12/08/2019',
-    addedBy: 'Ritesh'
-  },
-  {
-    item: 'Besan',
-    amount: 45,
-    date: '12/08/2019',
-    addedBy: 'Ritesh'
-  },
-  {
-    item: 'AllOut Refill',
-    amount: 72,
-    date: '12/11/2019',
-    addedBy: 'Ritesh'
-  },
-  {
-    item: 'Potato',
-    amount: 40,
-    date: '10/12/2019',
-    addedBy: 'Neha'
-  },
-  {
-    item: 'AllOut Refill',
-    amount: 76,
-    date: '12/2/2019',
-    addedBy: 'Ritesh'
-  }
-];
 

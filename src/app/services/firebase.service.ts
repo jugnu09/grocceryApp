@@ -5,13 +5,23 @@ import { AngularFireDatabase , AngularFireList, AngularFireObject} from '@angula
   providedIn: 'root'
 })
 export class FirebaseService {
-  usersRef: AngularFireList<any>;  
-  userRef: AngularFireObject<any>;  
+  itemList: AngularFireList<any>;  
+  //userRef: AngularFireObject<any>;  
   constructor(private db : AngularFireDatabase) { }
+
   createEntry(item: any){
-    return this.usersRef.push({
+    let date = new Date(Date.now()).toLocaleString();
+    this.itemList = this.db.list('/grocerry');
+    return this.itemList.push({
       item: item.description,
-      amount: item.amount
+      amount: item.amount,
+      date: date,
+      addedBy: "Ritesh"
     });
+  }
+
+  getGrocceryItems(){
+    this.itemList = this.db.list('/grocerry');
+    return this.itemList.valueChanges();
   }
 }
