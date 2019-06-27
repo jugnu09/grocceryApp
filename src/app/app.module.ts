@@ -25,12 +25,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddGrocceryComponent } from './add-groccery/add-groccery.component';
 import { ReportComponent } from './report/report.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddGrocceryComponent,
-    ReportComponent
+    ReportComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,10 @@ export class AppComponent {
         label: 'Monthly Report',
         path: './report',
         index: 1
+      }, {
+        label: 'Admin',
+        path: './admin',
+        index: 2
       }
     ];
   }

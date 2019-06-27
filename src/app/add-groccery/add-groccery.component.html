@@ -4,16 +4,16 @@
     <form [formGroup]="grocceryForm" (ngSubmit)="onSubmit()">
       <p>
         <mat-form-field>
-          <input type="text" matInput placeholder="Description" formControlName="description">
+          <input type="text" matInput placeholder="Description" formControlName="description" required>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field>
-          <input type="text" matInput placeholder="Amount" formControlName="amount">
+          <input type="text" matInput placeholder="Amount" formControlName="amount" required>
         </mat-form-field>
       </p>
       <div class="button">
-        <button type="submit" mat-mini-fab color="primary"><mat-icon>add</mat-icon></button>
+        <button type="submit" mat-mini-fab color="primary" [disabled]="!grocceryForm.valid"><mat-icon>add</mat-icon></button>
       </div>
     </form>
   </mat-card-content>

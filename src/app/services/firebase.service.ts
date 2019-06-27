@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase , AngularFireList, AngularFireObject} from '@angular/fire/database'
+import { AngularFireDatabase , AngularFireList, AngularFireObject} from '@angular/fire/database';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -7,11 +8,12 @@ import { AngularFireDatabase , AngularFireList, AngularFireObject} from '@angula
 export class FirebaseService {
   itemList: AngularFireList<any>;  
   //userRef: AngularFireObject<any>;  
-  constructor(private db : AngularFireDatabase) { }
+  constructor(private db : AngularFireDatabase, private toastrService :ToastrService) { }
 
   createEntry(item: any){
     let date = new Date(Date.now()).toLocaleString();
     this.itemList = this.db.list('/grocerry');
+    this.toastrService.success("Item Added Successfully","Success!");
     return this.itemList.push({
       item: item.description,
       amount: item.amount,
