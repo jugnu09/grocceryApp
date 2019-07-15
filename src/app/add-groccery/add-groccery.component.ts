@@ -9,19 +9,19 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./add-groccery.component.css']
 })
 export class AddGrocceryComponent implements OnInit {
-  grocceryForm : FormGroup;
-  constructor(private firebaseService : FirebaseService
+  grocceryForm: FormGroup;
+  constructor(private firebaseService: FirebaseService
             ) { }
 
   ngOnInit() {
     this.grocceryForm = new FormGroup({
       description : new FormControl(''),
       amount: new FormControl('')
-    })
+    });
   }
 
   onSubmit() {
-      let item = this.grocceryForm.value;
+      const item = this.grocceryForm.value;
       this.firebaseService.createEntry(item);
   }
 

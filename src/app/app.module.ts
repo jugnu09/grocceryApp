@@ -7,8 +7,7 @@ import { DemoMaterialModule } from './material-module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
-import { AngularFireDatabaseModule } from '@angular/fire/database'
-//import { AngularFireDatabase} from '@angular/fire/database'
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import {
   MatCardModule,
@@ -36,7 +35,6 @@ import { AdminComponent } from './admin/admin.component';
   ],
   imports: [
     BrowserModule,
-    //AngularFireDatabase,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,

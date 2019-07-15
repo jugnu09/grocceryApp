@@ -18,10 +18,9 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class ReportComponent implements OnInit {
   displayedColumns: string[] = ['item', 'amount'];
-  //dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   dataSource = new MatTableDataSource([]);
   expandedElement: PeriodicElement;
-  data : any;
+  data: any;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(private firebaseService: FirebaseService) { }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +10,8 @@ export class AppComponent {
   title = 'groccery';
   navLinks: any[];
   activeLinkIndex = -1;
-  constructor(private router: Router){
-    this.navLinks =[
+  constructor(private router: Router) {
+    this.navLinks = [
       {
         label: 'Add Groccery',
         path: './addgroccery',

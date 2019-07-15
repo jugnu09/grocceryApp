@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddGrocceryComponent } from './add-groccery/add-groccery.component';
-import {ReportComponent} from "./report/report.component";
+import {ReportComponent} from './report/report.component';
 import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [

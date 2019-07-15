@@ -1,15 +1,21 @@
-# FROM node:10.9.0
+FROM node:10.9.0 as builder
 
 # RUN mkdir /usr/src/app
-# WORKDIR /usr/src/app
+WORKDIR /usr/src/app
 
-# RUN npm install -g @angular/cli
+COPY package*.json ./
 
-# COPY . /usr/src/app
+RUN npm install -g @angular/cli
 
-# CMD ng serve --host 0.0.0.0 --port 4200
+COPY . .
 
-FROM nginx:stable
-COPY ./dist/ /var/www
-# COPY ./certificates/ /var/certificates
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+RUN npm run build
+
+COPY . /usr/src/app
+
+# CMD ng serve --host 0.0.0.0 --port 4200 
+
+##stage2:
+FROM nginx
+
+COPY --from=builder /usr/src/app/dist /usr/share/nginx/html

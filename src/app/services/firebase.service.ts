@@ -6,23 +6,22 @@ import { ToastrService } from 'ngx-toastr';
   providedIn: 'root'
 })
 export class FirebaseService {
-  itemList: AngularFireList<any>;  
-  //userRef: AngularFireObject<any>;  
-  constructor(private db : AngularFireDatabase, private toastrService :ToastrService) { }
+  itemList: AngularFireList<any>;
+  constructor(private db: AngularFireDatabase, private toastrService: ToastrService) { }
 
-  createEntry(item: any){
-    let date = new Date(Date.now()).toLocaleString();
+  createEntry(item: any) {
+    const date = new Date(Date.now()).toLocaleString();
     this.itemList = this.db.list('/grocerry');
-    this.toastrService.success("Item Added Successfully","Success!");
-    return this.itemList.push({
+    this.toastrService.success('Item Added Successfully', 'Success!');
+    return this.itemList.push ({
       item: item.description,
       amount: item.amount,
       date: date,
-      addedBy: "Ritesh"
+      addedBy: 'Ritesh'
     });
   }
 
-  getGrocceryItems(){
+  getGrocceryItems() {
     this.itemList = this.db.list('/grocerry');
     return this.itemList.valueChanges();
   }
