@@ -1,22 +1,22 @@
 <div *ngFor="let data of jsonData">
     <div>
-        <p>
-            <b>{{data.name}}</b>
-        </p>
-        <p>
-            <i>{{data.text}}</i>
-        </p>
-        <div *ngIf="data.replies.length>= 0">
-            <div *ngFor="let reply of data.replies" style="margin-left: 8px;">
-                <p>
-                    <b>{{reply.name}}</b>
-                </p>
-                <p>
-                    <i>{{reply.text}}</i>
-                </p>
-                <app-reply [recursiveData] = "reply"></app-reply>
-            </div>
-        </div>
+        <p><b>{{data.name}}</b></p>
+        <p><i>{{data.text}}</i></p>
+        <mat-accordion>
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Replies
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div *ngIf="data.replies.length>= 0">
+                    <div *ngFor="let reply of data.replies" class="identation">
+                        <p><b>{{reply.name}}</b></p>
+                        <p><i>{{reply.text}}</i></p>
+                        <app-reply [recursiveData]="reply"></app-reply>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
     </div>
-    <hr>
 </div>

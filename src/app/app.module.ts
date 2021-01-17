@@ -18,6 +18,7 @@ import {
 } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +27,7 @@ import { AddGrocceryComponent } from './add-groccery/add-groccery.component';
 import { ReportComponent } from './report/report.component';
 import { AdminComponent } from './admin/admin.component';
 import { CommentComponent } from './comment/comment.component';
+import { ReplyComponent } from './comment/reply/reply.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { CommentComponent } from './comment/comment.component';
     AddGrocceryComponent,
     ReportComponent,
     AdminComponent,
-    CommentComponent
+    CommentComponent,
+    ReplyComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { CommentComponent } from './comment/comment.component';
     DemoMaterialModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
      AngularFirestoreModule,
-     AngularFireDatabaseModule
+     AngularFireDatabaseModule,
+     HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
