@@ -25,13 +25,15 @@ import { AppComponent } from './app.component';
 import { AddGrocceryComponent } from './add-groccery/add-groccery.component';
 import { ReportComponent } from './report/report.component';
 import { AdminComponent } from './admin/admin.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddGrocceryComponent,
     ReportComponent,
-    AdminComponent
+    AdminComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

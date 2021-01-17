@@ -1,0 +1,29 @@
+<div *ngFor="let data of jsonData">
+    <div>
+        <p>
+            <b>{{data.name}}</b>
+        </p>
+        <p>
+            <i>{{data.text}}</i>
+        </p>
+        <div *ngIf="data.replies.length>= 0">
+            <div *ngFor="let reply of data.replies" style="margin-left: 8px;">
+                <p>
+                    <b>{{reply.name}}</b>
+                </p>
+                <p>
+                    <i>{{reply.text}}</i>
+                </p>
+                <div *ngFor="let subreply of reply.replies" style="margin-left: 8px;">
+                    <p>
+                        <b>{{subreply.name}}</b>
+                    </p>
+                    <p>
+                        <i>{{subreply.text}}</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>

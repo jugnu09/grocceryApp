@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddGrocceryComponent } from './add-groccery/add-groccery.component';
 import {ReportComponent} from './report/report.component';
 import { AdminComponent } from './admin/admin.component';
+import { CommentComponent } from './comment/comment.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
+  },
+  {
+    path: 'comment',
+    component: CommentComponent
   },
   {
     path: '',

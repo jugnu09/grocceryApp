@@ -24,6 +24,11 @@ export class AppComponent {
         label: 'Admin',
         path: './admin',
         index: 2
+      },
+      {
+        label: 'Comments',
+        path: './comment',
+        index: 3
       }
     ];
   }
