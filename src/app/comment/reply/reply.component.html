@@ -1,0 +1,9 @@
+<div *ngFor="let reply of recursiveData.replies" style="margin-left: 8px;">
+    <p>
+        <b>{{reply.name}}</b>
+    </p>
+    <p>
+        <i>{{reply.text}}</i>
+    </p>
+    <app-reply [recursiveData] = "reply"></app-reply>
+</div>

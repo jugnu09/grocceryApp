@@ -14,14 +14,7 @@
                 <p>
                     <i>{{reply.text}}</i>
                 </p>
-                <div *ngFor="let subreply of reply.replies" style="margin-left: 8px;">
-                    <p>
-                        <b>{{subreply.name}}</b>
-                    </p>
-                    <p>
-                        <i>{{subreply.text}}</i>
-                    </p>
-                </div>
+                <app-reply [recursiveData] = "reply"></app-reply>
             </div>
         </div>
     </div>
