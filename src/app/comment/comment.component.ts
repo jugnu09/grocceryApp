@@ -17,27 +17,27 @@ export class CommentComponent implements OnInit {
         "text": "text1",
         "date": "2020-01-13 11:11:11",
         "replies": [{
-          "name": "Reply1",
-          "text": "Nice to meet you, Mr. Bond",
+          "name": "Vaibhav",
+          "text": "I am Replying Ritesh",
           "date": "2020-01-13 11:12:13",
           "replies": [
             {
-              "name": "Reply1.1",
-              "text": "Nice to meet you, Mr. Bond",
+              "name": "John",
+              "text": "I am replying Vaibhav.",
               "date": "2020-01-13 11:12:13",
               "replies": [{
-                "name": "Reply1.1.1",
-                "text": "Nice to meet you, Mr. Bond",
+                "name": "Dmitri",
+                "text": "I am replying John",
                 "date": "2020-01-13 11:12:13",
                 "replies": [{
-                  "name": "Reply1.1.1.1",
-                  "text": "Nice to meet you, Mr. Bond",
+                  "name": "Iryna",
+                  "text": "I am replying Dmitri",
                   "date": "2020-01-13 11:12:13",
                   "replies": []
                 },
                 {
-                  "name": "Reply1.1.1.2",
-                  "text": "Nice to meet you, Mr. Bond",
+                  "name": "Attila",
+                  "text": "I am replying Dmitri",
                   "date": "2020-01-13 11:12:13",
                   "replies": []
                 }]
@@ -52,21 +52,21 @@ export class CommentComponent implements OnInit {
         "text": "text1",
         "date": "2020-01-13 11:11:11",
         "replies": [{
-          "name": "Reply1",
-          "text": "Nice to meet you, Mr. Bond",
+          "name": "Ola",
+          "text": "I am replying Ritesh",
           "date": "2020-01-13 11:12:13",
           "replies": [
             {
-              "name": "Reply1.1",
-              "text": "Nice to meet you, Mr. Bond",
+              "name": "Sandeep",
+              "text": "I am replying Ola",
               "date": "2020-01-13 11:12:13",
               "replies": [{
-                "name": "Reply1.1.1",
-                "text": "Nice to meet you, Mr. Bond",
+                "name": "George",
+                "text": "i am replying Sandeep",
                 "date": "2020-01-13 11:12:13",
                 "replies": [{
-                  "name": "Reply1.1.1.1",
-                  "text": "Nice to meet you, Mr. Bond",
+                  "name": "Tom",
+                  "text": "I am Replying George",
                   "date": "2020-01-13 11:12:13",
                   "replies": []
                 }]
